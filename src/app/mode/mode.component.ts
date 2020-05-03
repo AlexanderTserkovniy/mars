@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ModeService} from './mode.service';
 import {Mode} from './mode.typings';
 import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-mode',
@@ -12,7 +13,7 @@ export class ModeComponent implements OnInit {
 
   public modes$: Observable<Mode[]>;
 
-  constructor(public modeService: ModeService) {
+  constructor(public modeService: ModeService, private router: Router) {
     this.modes$ = this.modeService.getModes();
   }
 
@@ -25,6 +26,7 @@ export class ModeComponent implements OnInit {
 
   chooseMode(id: number) {
     this.modeService.chooseMode(id);
+    this.router.navigate(['hs']);
   }
 
 }

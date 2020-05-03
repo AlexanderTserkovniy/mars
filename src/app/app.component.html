@@ -1,5 +1,5 @@
-<h1 class="center">{{ title }}</h1>
+<h1 class="center">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ title }}</a>
+</h1>
 
-<h2>Choose the game mode</h2>
-
-<app-mode></app-mode>
+<router-outlet></router-outlet>
