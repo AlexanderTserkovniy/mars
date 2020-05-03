@@ -1,0 +1,5 @@
+/* TODO this this does not work */
+:global(.mat-list-item-content) {
+  /*@extend .js-c;*/
+  justify-content: center;
+}

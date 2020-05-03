@@ -1,0 +1,11 @@
+<mat-action-list>
+  <button
+    mat-list-item
+
+    [disabled]="!mode.isEnabled"
+    *ngFor="let mode of modes$ | async; trackBy: trackByFn"
+    (click)="chooseMode(mode.id)"
+  >
+    {{ mode.name | titlecase }}
+  </button>
+</mat-action-list>
