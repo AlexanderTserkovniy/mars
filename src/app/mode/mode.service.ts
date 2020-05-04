@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Mode} from './mode.typings';
-import {Observable, of} from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
+import {map, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModeService {
-  private modes: Mode[] = [
+  #modes: Mode[] = [
     {
       id: 1,
       name: 'hot seat',
@@ -23,20 +24,23 @@ export class ModeService {
       isEnabled: false,
     }
   ];
-  #chosenMode: null | number = null;
+  #chosenMode: BehaviorSubject<null | number> = new BehaviorSubject<null | number>(null);
+  public readonly chosenMode = this.#chosenMode.asObservable();
 
   constructor() {
   }
 
   getModes(): Observable<Mode[]> {
-    return of(this.modes);
+    return of(this.#modes);
   }
 
   chooseMode(id: number) {
-    this.#chosenMode = id;
+    this.#chosenMode.next(id);
   }
 
-  getChosenMode(): null | Mode {
-    return this.#chosenMode && this.modes.find(mode => mode.id === this.#chosenMode);
+  getChosenMode(): Observable<null | Mode> {
+    return this.#chosenMode.pipe(
+      map(val => this.#modes.find(mode => mode.id === val))
+    );
   }
 }

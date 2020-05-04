@@ -1,0 +1,30 @@
+<h2>
+  Choose needed number of players
+</h2>
+
+<form class="form" name="step1">
+  <mat-form-field>
+    <mat-label>Number of players</mat-label>
+    <mat-select [(ngModel)]="numberOfPlayers" name="_not_used" (ngModelChange)="onPlayerNumberChoose()">
+      <!-- TODO Process disabled in more correct place -->
+      <mat-option
+        *ngFor="let number of possibleNumberOfPlayers"
+        [value]="number"
+        [disabled]="number === 1"
+      >
+        {{number}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Next</button>
+</form>
+
+<form class="form" name="step2">
+  <mat-form-field *ngFor="let number of numberOfPlayers | numberToArray">
+    <mat-label>Name of the of the {{ number }} player</mat-label>
+    <input matInput placeholder="'Player number {{ number }} name'" value="Player #{{ number }}" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Move to corporation choice</button>
+</form>
