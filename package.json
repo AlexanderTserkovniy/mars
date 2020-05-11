@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --code-coverage --watch false --browsers ChromeHeadlessNoSandbox",
+    "testtest": "ng test --code-coverage --watch false --browsers ChromeHeadlessNoSandbox",
     "test:watch": "ng test",
     "test:coverage": "ng test --watch=true --code-coverage",
     "test:coverage:once": "ng test --watch=false --code-coverage",
