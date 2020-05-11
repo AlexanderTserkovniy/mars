@@ -13,4 +13,17 @@ describe('ModeService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should pipe results of getChosenMode', done => {
+    service.chooseMode(1);
+    service.getChosenMode().subscribe((val) => {
+      expect(val).toBeTruthy();
+      expect(val).toEqual({
+        id: 1,
+        name: 'hot seat',
+        isEnabled: true,
+      });
+      done();
+    });
+  });
 });

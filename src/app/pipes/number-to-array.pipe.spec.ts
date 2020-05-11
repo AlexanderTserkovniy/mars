@@ -5,4 +5,9 @@ describe('NumberToArrayPipe', () => {
     const pipe = new NumberToArrayPipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('should transform a number to an array of this amount of number', () => {
+    const pipe = new NumberToArrayPipe();
+    expect(pipe.transform(3)).toEqual([1, 2, 3]);
+  });
 });

@@ -25,4 +25,9 @@ describe('ModeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should chooseMode', () => {
+    const bound = component.chooseMode.bind(component, 1);
+    expect(bound).not.toThrow();
+  });
 });
