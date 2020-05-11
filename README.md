@@ -1,4 +1,4 @@
-# Mars
+# Mars ![build](https://api.travis-ci.org/AlexanderTserkovniy/mars.svg?branch=master&status=started) [![codecov](https://codecov.io/gh/AlexanderTserkovniy/mars/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexanderTserkovniy/mars)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
