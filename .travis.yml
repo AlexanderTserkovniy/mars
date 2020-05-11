@@ -3,7 +3,7 @@ node_js:
   - "12"
 
 before_install:
-  - pip install --user codecov
+  - npm install codecov -g
 after_success:
   - codecov
 
