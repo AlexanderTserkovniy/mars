@@ -1,4 +1,7 @@
-language: ruby
-rvm:
-  - 2.2
-  - jruby
+language: node_js
+node_js:
+  - "0.12"
+
+script:
+  - npm i
+  - npm run test:coverage:once
