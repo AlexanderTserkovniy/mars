@@ -7,6 +7,3 @@ before_install:
 after_success:
   - codecov
 
-script:
-  - npm i
-
