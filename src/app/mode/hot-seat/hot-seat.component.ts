@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GameService} from '@app/game/game.service';
-import {NumberToArrayPipe} from '@app/pipes/number-to-array.pipe';
+import {NumberToArrayPipe} from '@app/pipe/number-to-array.pipe';
 import {Router} from '@angular/router';
 
 @Component({

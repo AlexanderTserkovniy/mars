@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GameService} from '@app/game/game.service';
 import {Subscription} from 'rxjs';
-import {Player} from '@app/classes/player';
+import {Player} from '@app/class/player';
 import {environment} from '@env/environment';
 
 @Component({

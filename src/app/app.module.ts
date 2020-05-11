@@ -10,7 +10,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HotSeatComponent} from './mode/hot-seat/hot-seat.component';
 import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
-import {NumberToArrayPipe} from './pipes/number-to-array.pipe';
+import {NumberToArrayPipe} from './pipe/number-to-array.pipe';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { HotSeatStartComponent } from './mode/hot-seat-start/hot-seat-start.component';
