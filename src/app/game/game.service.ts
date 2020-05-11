@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Mode} from '../mode/mode.typings';
-import {ModeService} from '../mode/mode.service';
-import {Observable, of} from 'rxjs';
+import {Mode} from '@app/mode/mode.typings';
+import {ModeService} from '@app/mode/mode.service';
+import {Observable} from 'rxjs';
+import {Player} from '@app/classes/player';
 
 export const DEFAULT_NUMBER_OF_PLAYERS = 2;
 export const DEFAULT_POSSIBLE_NUMBER_OF_PLAYERS = [1, 2, 3, 4, 5];
@@ -15,5 +16,11 @@ export class GameService {
   public numberOfPlayers: number = DEFAULT_NUMBER_OF_PLAYERS;
   public mode$: Observable<Mode> = this.modeService.getChosenMode();
 
+  private players: undefined | Player[];
+
   constructor(readonly modeService: ModeService) {}
+
+  public createPlayers(playerNames: string[]) {
+    this.players = playerNames.map(playerName => new Player({ playerName }));
+  }
 }

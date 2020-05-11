@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {GameService} from '../../game/game.service';
+import {Component, OnInit} from '@angular/core';
+import {GameService} from '@app/game/game.service';
+import {NumberToArrayPipe} from '@app/pipes/number-to-array.pipe';
 
 @Component({
   selector: 'app-hot-seat',
@@ -8,8 +9,10 @@ import {GameService} from '../../game/game.service';
 })
 export class HotSeatComponent implements OnInit {
 
-  public numberOfPlayers = this.gameService.numberOfPlayers;
-  public possibleNumberOfPlayers = this.gameService.possibleNumberOfPlayers;
+  public step = 0;
+  public numberOfPlayers: number = this.gameService.numberOfPlayers;
+  public possibleNumberOfPlayers: number[] = this.gameService.possibleNumberOfPlayers;
+  public players: string[] = [];
 
   constructor(public gameService: GameService) {
   }
@@ -21,4 +24,12 @@ export class HotSeatComponent implements OnInit {
     this.gameService.numberOfPlayers = this.numberOfPlayers;
   }
 
+  onPlayersNumberChoiceFinish(): void {
+    this.step = 1;
+    this.players = new NumberToArrayPipe().transform(this.numberOfPlayers).map((_, index) => `Player #${index + 1}`);
+  }
+
+  onPlayersNamesEditFinish(): void {
+    this.gameService.createPlayers(this.players);
+  }
 }

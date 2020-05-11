@@ -17,10 +17,8 @@
       "dom"
     ],
     "paths": {
-      "ss": [
-        "dist/ss/ss",
-        "dist/ss"
-      ]
+      "@app/*": ["src/app/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "angularCompilerOptions": {
