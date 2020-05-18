@@ -1,3 +1,5 @@
+import {Corporation} from '@app/corporation/corporation.typings';
+
 export type MarsResources = {
   megaCredits: number;
   steel: number;
@@ -33,7 +35,7 @@ export type MarsPlayerOptions = Omit<IMarsPlayer, 'corporation' | 'terraformingR
 
 export class Player implements IMarsPlayer {
   public playerName: string;
-  public corporation: (null | { [key: string]: any }) = null;
+  public corporation: (null | Corporation) = null;
   public terraformingRating: number = DEFAULT_RATING;
   public resources: MarsResources = DEFAULT_RESOURCES;
 

@@ -15,6 +15,11 @@ describe('CorporationService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should getCorporationsChoiceForCurrentPlayer return last value as designed', () => {
+    const result = new Array(6).fill(1).map(_ => service.getCorporationsChoiceForCurrentPlayer());
+    expect(result[result.length - 1][1]['Card #']).toBe('FOR TESTING PURPOSES ONLY!');
+  });
+
   // TODO Rewrite this shit
   for (let times = 50; times > 0; times--) {
     for (let length = corporationsArray.length; length > 0; length -= 6) {

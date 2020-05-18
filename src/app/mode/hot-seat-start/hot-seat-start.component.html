@@ -1,17 +1,21 @@
 <img src="assets/field_best.jpg" alt="The field" class="board" />
 
-<mat-card *ngIf="players.length" >
+<mat-card *ngIf="corporationsChosen === false">
   <mat-card-header>
-    <h2>Choose the corporation</h2>
+    <h2>{{ templatePlayerForHTML.playerName }}: please choose corporation</h2>
   </mat-card-header>
 
-  <mat-card-content>
-    <mat-card>
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  <mat-card-content role="group" class="d-f-imp flex-row">
+    <mat-card *ngFor="let corporation of this.corporations; trackBy: track" class="flex-1 d-f-imp flex-column">
+      <mat-card-header class="flex-1">
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>{{ corporation["Card Name"] }}</mat-card-title>
+        <mat-card-subtitle>{{ corporation["Action or On-going Effect text"] }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ corporation["One time Effect Text"] }}</mat-card-subtitle>
       </mat-card-header>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="chooseCorporation(corporation)">Choose this Fraction</button>
+      </mat-card-actions>
     </mat-card>
   </mat-card-content>
 </mat-card>
