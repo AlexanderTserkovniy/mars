@@ -5,9 +5,9 @@ import {Player} from '@app/class/player';
 import {environment} from '@env/environment';
 import {CorporationService} from '@app/corporation/corporation.service';
 import {
-  concatMap,
+  concatMap, delay,
   flatMap,
-  mergeMap,
+  mergeAll,
   share,
   take,
   takeWhile
@@ -34,6 +34,17 @@ export class HotSeatStartComponent implements OnDestroy, OnInit {
     if (!environment.production) {
       // TODO Fix when players are already created;
       this.gameService.createPlayers(['Direct player 1', 'Direct player 2']);
+      // import('@assets/corporations_array.json')
+      //   .then(({ default: corporations }) => {
+      //     of(null)
+      //       .pipe(
+      //         delay(1000)
+      //       )
+      //       .subscribe(() => {
+      //         this.userChoice$.next(corporations.find(corp => corp['Card Name'] === 'Mining Guild') as Corporation);
+      //         this.userChoice$.next(corporations.find(corp => corp['Card Name'] === 'PhoboLog') as Corporation);
+      //       });
+      //   });
     }
   }
 
@@ -46,19 +57,17 @@ export class HotSeatStartComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this.templatePlayer.subscribe(player => {
-      this.templatePlayerForHTML = player;
-    });
+    this.templatePlayer.subscribe(player => (this.templatePlayerForHTML = player));
 
     /*
     * Get array of players (which is observable)
-    * mergeMap it one by one (to iterate by each instead of working on single array)
+    * mergeAll() it one by one (to iterate by each instead of working on single array)
     * concatMap (to await previous concatMap to complete)
     * wait for user to make choice
     * return result
     * */
     this.getPlayersSubscription$ = this.players$.pipe(
-      mergeMap(v => v),
+      mergeAll(),
     )
       .pipe(
         concatMap(player => {
@@ -91,7 +100,7 @@ export class HotSeatStartComponent implements OnDestroy, OnInit {
       )
       .subscribe(null, null, () => {
         this.corporationsChosen = true;
-        console.log('THIS FUCKING SHIT FINISHED!', this.gameService.getPlayers().getValue());
+        this.gameService.start();
       });
   }
 

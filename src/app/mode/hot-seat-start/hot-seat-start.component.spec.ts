@@ -25,7 +25,6 @@ describe('HotSeatStartComponent', () => {
   });
 
   it('should chooseCorporation', () => {
-    console.log('component.chooseCorporation({})', component.chooseCorporation({}));
     expect(component.chooseCorporation({})).toBe(void 0);
   });
 

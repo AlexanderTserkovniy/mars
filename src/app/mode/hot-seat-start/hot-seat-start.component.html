@@ -2,7 +2,11 @@
 
 <mat-card *ngIf="corporationsChosen === false">
   <mat-card-header>
-    <h2>{{ templatePlayerForHTML.playerName }}: please choose corporation</h2>
+    <h2>
+      <span class="main">
+        {{ templatePlayerForHTML?.playerName }}:
+      </span> please choose corporation
+    </h2>
   </mat-card-header>
 
   <mat-card-content role="group" class="d-f-imp flex-row">

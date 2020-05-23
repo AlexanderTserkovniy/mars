@@ -1,10 +1,10 @@
 import {Corporation} from '@app/corporation/corporation.typings';
 
 export type MarsResources = {
-  megaCredits: number;
+  megacredit: number;
   steel: number;
   titanium: number;
-  plants: number;
+  plant: number;
   energy: number;
   heat: number;
 
@@ -14,12 +14,22 @@ export type MarsResources = {
   animals?: number;
 };
 
+export type MarsResourcesProduction = Exclude<MarsResources, 'microbes' | 'animals'>;
+
 const DEFAULT_RATING: 20 = 20;
 const DEFAULT_RESOURCES: MarsResources = {
-  megaCredits: 0,
+  megacredit: 0,
   steel: 0,
   titanium: 0,
-  plants: 0,
+  plant: 0,
+  energy: 0,
+  heat: 0,
+};
+const DEFAULT_RESOURCES_PRODUCTION = {
+  megacredit: 0,
+  steel: 0,
+  titanium: 0,
+  plant: 0,
   energy: 0,
   heat: 0,
 };
@@ -29,15 +39,17 @@ export interface IMarsPlayer {
   corporation: (null | { [key: string]: any });
   terraformingRating: number;
   resources: MarsResources;
+  production: MarsResourcesProduction;
 }
 
-export type MarsPlayerOptions = Omit<IMarsPlayer, 'corporation' | 'terraformingRating' | 'resources'>;
+export type MarsPlayerOptions = Omit<IMarsPlayer, 'corporation' | 'terraformingRating' | 'resources' | 'production'>;
 
 export class Player implements IMarsPlayer {
   public playerName: string;
   public corporation: (null | Corporation) = null;
   public terraformingRating: number = DEFAULT_RATING;
-  public resources: MarsResources = DEFAULT_RESOURCES;
+  public resources: MarsResources = Object.assign({}, DEFAULT_RESOURCES);
+  public production: MarsResourcesProduction = Object.assign({}, DEFAULT_RESOURCES_PRODUCTION);
 
   constructor(marsPlayerOptions: MarsPlayerOptions) {
     Object.assign(this, marsPlayerOptions);
