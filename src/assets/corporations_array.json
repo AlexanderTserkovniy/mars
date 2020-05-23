@@ -70,8 +70,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: After you pay for a card or standard project with a basic cost of 20 MC or more, you gain 4 MC.",
     "One time Effect Text": "You start with 57 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Ecoline",
@@ -144,8 +143,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: You may always pay 7 plants, instead of 8, to place 1 greenery.",
     "One time Effect Text": "You start with 2 plant production, 3 plants, and 36 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Helion",
@@ -218,8 +216,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: You may use heat as MC. You may not use MC as heat.",
     "One time Effect Text": "You start with 3 heat production and 42 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Interplanetary Cinematics",
@@ -292,8 +289,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: Each time you play an event, you gain 2 MC.",
     "One time Effect Text": "You start with 20 steel and 30 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Inventrix",
@@ -366,8 +362,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: Your temperature, oxygen, and ocean requirements are +2 or -2 steps, your choice in each case.",
     "One time Effect Text": "As your first action in the game, draw 3 cards. Start with 45 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Mining Guild",
@@ -440,8 +435,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: Each time you get any steel or titanium as a placement bonus on the map, increase your steel production 1 step.",
     "One time Effect Text": "The earliest private enterprises on Mars focused on mining and exporting minerals off the surface. As the mega-corporations arrive to terraform, the miners unite in the Guild to defend their interests. With their expertise and knowledg of the planet they will be a worthy contender in the race.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "PhoboLog",
@@ -514,8 +508,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: Your titanium resources are each worth 1 MC extra.",
     "One time Effect Text": "You start with 10 titanium and 23 MC",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Saturn Systems",
@@ -588,8 +581,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: Each time any Jovian tag is put into play, including this, increase your MC production 1 step.",
     "One time Effect Text": "You start with 1 titanium production and 42 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Teractor",
@@ -662,8 +654,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: When playing an Earth card, you pay 3 MC less for it.",
     "One time Effect Text": "You start with 60 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "Tharsis Republic",
@@ -736,8 +727,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: When any city tile is placed ON MARS, increase your MC production 1 step. When you place a city tile, gain 3 MC.",
     "One time Effect Text": "You start with 40 MC. As your first action in the game, place a city tile.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "ThorGate",
@@ -810,8 +800,7 @@
     "Interactions": "",
     "Action or On-going Effect text": "Effect: When playing a power card OR THE STANDARD PROJECT POWER PLANT, you pay 3 MC less for it.",
     "One time Effect Text": "You start with 1 energy production and 48 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   },
   {
     "Card Name": "United Nations Mars Initiative",
@@ -884,7 +873,6 @@
     "Interactions": "",
     "Action or On-going Effect text": "Action: If your Terraform Rating was raised this generation, you may pay 3 MC to raise it 1 step more.",
     "One time Effect Text": "You start with 40 MC.",
-    "Text": "",
-    "": ""
+    "Text": ""
   }
 ]

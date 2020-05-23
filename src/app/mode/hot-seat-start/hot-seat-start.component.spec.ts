@@ -24,6 +24,11 @@ describe('HotSeatStartComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should chooseCorporation', () => {
+    console.log('component.chooseCorporation({})', component.chooseCorporation({}));
+    expect(component.chooseCorporation({})).toBe(void 0);
+  });
+
   // This shit does not work because `import {environment} from '@env/environment';` cannot be mocked
   xit('should avoid fixture creation if production', () => {
     expect(component).toBeTruthy();

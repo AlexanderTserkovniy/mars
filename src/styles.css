@@ -24,3 +24,23 @@ body {
 .active {
   background: antiquewhite;
 }
+
+.d-f {
+  display: flex;
+}
+
+.d-f-imp {
+  display: flex !important;
+}
+
+.flex-row {
+  flex-flow: row wrap;
+}
+
+.flex-column {
+  flex-flow: column wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}

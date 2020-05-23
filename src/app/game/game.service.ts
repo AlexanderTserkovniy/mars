@@ -3,6 +3,7 @@ import {Mode} from '@app/mode/mode.typings';
 import {ModeService} from '@app/mode/mode.service';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import {Player} from '@app/class/player';
+import {Corporation} from '@app/corporation/corporation.typings';
 
 export const DEFAULT_NUMBER_OF_PLAYERS = 2;
 export const DEFAULT_POSSIBLE_NUMBER_OF_PLAYERS = [1, 2, 3, 4, 5];
@@ -26,5 +27,9 @@ export class GameService {
 
   public getPlayers(): BehaviorSubject<Player[]> {
     return this.players$;
+  }
+
+  public userPickCorporation(player: Player, corporation: Corporation): void {
+    player.corporation = corporation;
   }
 }

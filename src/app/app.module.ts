@@ -14,6 +14,7 @@ import {NumberToArrayPipe} from './pipe/number-to-array.pipe';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { HotSeatStartComponent } from './mode/hot-seat-start/hot-seat-start.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HotSeatStartComponent } from './mode/hot-seat-start/hot-seat-start.comp
     MatSelectModule,
     MatButtonModule,
     MatInputModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
