@@ -16,7 +16,7 @@ describe('CorporationService', () => {
   });
 
   it('should getCorporationsChoiceForCurrentPlayer return last value as designed', () => {
-    const result = new Array(6).fill(1).map(_ => service.getCorporationsChoiceForCurrentPlayer());
+    const result = new Array(7).fill(1).map(_ => service.getCorporationsChoiceForCurrentPlayer());
     expect(result[result.length - 1][1]['Card #']).toBe('FOR TESTING PURPOSES ONLY!');
   });
 
@@ -27,6 +27,9 @@ describe('CorporationService', () => {
         const result1 = service.getCorporationsChoiceForCurrentPlayer();
         const result2 = service.getCorporationsChoiceForCurrentPlayer();
         const result3 = service.getCorporationsChoiceForCurrentPlayer();
+        const result4 = service.getCorporationsChoiceForCurrentPlayer();
+        const result5 = service.getCorporationsChoiceForCurrentPlayer();
+
         expect(result1[0]).not.toEqual(result1[1]);
         expect(result2[0]).not.toEqual(result2[1]);
         expect(result3[0]).not.toEqual(result3[1]);
@@ -46,6 +49,16 @@ describe('CorporationService', () => {
 
         expect(result3[1]).not.toEqual(result1[1]);
         expect(result3[1]).not.toEqual(result2[1]);
+
+        // @ts-ignore
+        expect(result4[0]).not.toEqual({});
+        // @ts-ignore
+        expect(result4[1]).not.toEqual({});
+
+        // @ts-ignore
+        expect(result5[0]).not.toEqual({});
+        // @ts-ignore
+        expect(result5[1]).not.toEqual({});
       });
     }
   }

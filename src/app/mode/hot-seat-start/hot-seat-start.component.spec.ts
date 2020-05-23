@@ -35,12 +35,23 @@ describe('HotSeatStartComponent', () => {
   it('should finish subscription when corporations are chosen', () => {
     expect(component.corporationsChosen).toEqual(false);
 
-    // @ts-ignore
-    component.chooseCorporation({});
-    // @ts-ignore
-    component.chooseCorporation({});
+    if (!component.gameService.getPlayers().getValue().length) {
+      component.gameService.createPlayers(['asfas', 'asfasfa']);
+    }
+
+    component.gameService.getPlayers().getValue()
+      .forEach(() => {
+        // @ts-ignore
+        component.chooseCorporation({});
+      });
 
     expect(component.corporationsChosen).toEqual(true);
+  });
+
+  it('should have track function to correctly for each... honestly it is a Angular shit...', () => {
+    expect(component.track).toBeTruthy();
+    // @ts-ignore
+    expect(component.track(null, {'Card Name': 'For track function to reach'})).toEqual('For track function to reach');
   });
 
   // This shit does not work because `import {environment} from '@env/environment';` cannot be mocked

@@ -25,7 +25,7 @@ export class CorporationService {
     } while (variantAIndex === variantBIndex);
     const result = [this.corporations[variantAIndex], this.corporations[variantBIndex]];
     this.givenCorporations.push(...result);
-    this.givenCorporations.forEach((corp) => {
+    result.forEach((corp) => {
       const deleteIndex = this.corporations.findIndex(c => c === corp);
       this.corporations.splice(deleteIndex, 1);
     });
