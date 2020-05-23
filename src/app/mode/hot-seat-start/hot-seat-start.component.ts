@@ -31,6 +31,7 @@ export class HotSeatStartComponent implements OnDestroy, OnInit {
   private getPlayersSubscription$2: Subscription;
 
   constructor(public gameService: GameService, private corporationService: CorporationService) {
+    /* istanbul ignore if */
     if (!environment.production) {
       // TODO Fix when players are already created;
       this.gameService.createPlayers(['Direct player 1', 'Direct player 2']);

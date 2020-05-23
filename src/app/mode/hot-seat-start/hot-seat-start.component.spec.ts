@@ -28,6 +28,21 @@ describe('HotSeatStartComponent', () => {
     expect(component.chooseCorporation({})).toBe(void 0);
   });
 
+  it('should corporationsChosen flag switch to work', () => {
+    expect(component.corporationsChosen).toEqual(false);
+  });
+
+  it('should finish subscription when corporations are chosen', () => {
+    expect(component.corporationsChosen).toEqual(false);
+
+    // @ts-ignore
+    component.chooseCorporation({});
+    // @ts-ignore
+    component.chooseCorporation({});
+
+    expect(component.corporationsChosen).toEqual(true);
+  });
+
   // This shit does not work because `import {environment} from '@env/environment';` cannot be mocked
   xit('should avoid fixture creation if production', () => {
     expect(component).toBeTruthy();
