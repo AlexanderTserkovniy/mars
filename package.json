@@ -10,7 +10,7 @@
     "test:coverage:once": "ng test --watch=false --code-coverage --browsers ChromeHeadlessNoSandbox",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cz": "git-cz"
+    "cz": "git add . && git-cz --retry"
   },
   "private": true,
   "dependencies": {
