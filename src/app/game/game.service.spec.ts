@@ -5,6 +5,7 @@ import { GameService } from './game.service';
 import {Corporation} from '@app/corporation/corporation.typings';
 import { map, mergeAll, pairwise} from 'rxjs/operators';
 import {Player} from '@app/class/player';
+import {RouterTestingModule} from '@angular/router/testing';
 
 // @ts-ignore
 const corporationMock: Corporation = {
@@ -34,7 +35,9 @@ describe('GameService', () => {
   let service: GameService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [ RouterTestingModule ]
+    });
     service = TestBed.inject(GameService);
   });
 

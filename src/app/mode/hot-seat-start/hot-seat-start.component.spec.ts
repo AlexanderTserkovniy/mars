@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HotSeatStartComponent } from './hot-seat-start.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('HotSeatStartComponent', () => {
   let component: HotSeatStartComponent;
@@ -9,6 +10,9 @@ describe('HotSeatStartComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         HotSeatStartComponent
+      ],
+      imports: [
+        RouterTestingModule
       ]
     })
     .compileComponents();
