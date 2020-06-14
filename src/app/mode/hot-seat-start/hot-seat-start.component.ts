@@ -95,8 +95,8 @@ export class HotSeatStartComponent implements OnDestroy, OnInit {
     this.getPlayersSubscription$2 = this.getPlayersSubscription$
       .pipe(
         takeWhile(() => {
-          const ff = this.players$.getValue();
-          return !ff.every(player => !!player.corporation);
+          const players = this.players$.getValue();
+          return !players.every(player => !!player.corporation);
         }),
       )
       .subscribe(null, null, () => {

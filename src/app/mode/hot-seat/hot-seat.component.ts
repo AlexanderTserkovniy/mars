@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GameService} from '@app/game/game.service';
 import {NumberToArrayPipe} from '@app/pipe/number-to-array.pipe';
 import {Router} from '@angular/router';
+import ROUTES from '@app/constants/routes';
 
 @Component({
   selector: 'app-hot-seat',
@@ -32,6 +33,6 @@ export class HotSeatComponent implements OnInit {
 
   onPlayersNamesEditFinish(): void {
     this.gameService.createPlayers(this.players);
-    this.router.navigate(['hs/game']);
+    this.router.navigate([`${ROUTES.HOT_SEAT}/${ROUTES.GAME_START}`]);
   }
 }
