@@ -1,0 +1,35 @@
+.the-map {
+  position: relative;
+}
+
+.board {
+  width: 100%;
+}
+
+.score {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0.4vmax;
+  width: calc(100% - 0.8vmax);
+  height: calc(100% - 1vmax);
+  background: rgba(1,1,1,0.5);
+
+  display: grid;
+  grid-gap: 0.128vmax 0.121vmax;
+  grid-template-columns:
+    repeat(26, 3.7vmax);
+  grid-template-rows:
+    repeat(26, 3.1vmax)
+  ;
+}
+
+.score-item {
+  background: rgba(200, 200, 200, 0.7);
+  grid-auto-columns: auto;
+}
+
+.game-area {
+  grid-column: 2 / span 24;
+  grid-row: 2 / span 24;
+}

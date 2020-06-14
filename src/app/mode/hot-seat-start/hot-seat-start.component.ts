@@ -31,22 +31,7 @@ export class HotSeatStartComponent implements OnDestroy, OnInit {
   private getPlayersSubscription$2: Subscription;
 
   constructor(public gameService: GameService, private corporationService: CorporationService) {
-    /* istanbul ignore if */
-    if (!environment.production) {
-      // TODO Fix when players are already created;
-      this.gameService.createPlayers(['Direct player 1', 'Direct player 2']);
-      // import('@assets/corporations_array.json')
-      //   .then(({ default: corporations }) => {
-      //     of(null)
-      //       .pipe(
-      //         delay(1000)
-      //       )
-      //       .subscribe(() => {
-      //         this.userChoice$.next(corporations.find(corp => corp['Card Name'] === 'Mining Guild') as Corporation);
-      //         this.userChoice$.next(corporations.find(corp => corp['Card Name'] === 'PhoboLog') as Corporation);
-      //       });
-      //   });
-    }
+
   }
 
   chooseCorporation(corporation) {

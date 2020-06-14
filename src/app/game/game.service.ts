@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Mode} from '@app/mode/mode.typings';
 import {ModeService} from '@app/mode/mode.service';
-import {BehaviorSubject, Observable, of, Subscription} from 'rxjs';
+import {BehaviorSubject, Observable, Subscription} from 'rxjs';
 import {Player} from '@app/class/player';
 import {Corporation} from '@app/corporation/corporation.typings';
-import {map, mergeAll} from 'rxjs/operators';
+import {last, map, mergeAll, take} from 'rxjs/operators';
 import filterEmptyFromObject from '@app/utils/filter-empty';
+import ROUTES from '@app/constants/routes';
+import {Router} from '@angular/router';
 
 export const DEFAULT_NUMBER_OF_PLAYERS = 2;
 export const DEFAULT_POSSIBLE_NUMBER_OF_PLAYERS = [1, 2, 3, 4, 5];
@@ -22,7 +24,7 @@ export class GameService {
   private players$: BehaviorSubject<[] | Player[]> = new BehaviorSubject<[] | Player[]>([]);
   private unsubs: Subscription[] = [];
 
-  constructor(readonly modeService: ModeService) {}
+  constructor(readonly modeService: ModeService, private router: Router) {}
 
   public createPlayers(playerNames: string[]) {
     this.players$.next(playerNames.map(playerName => new Player({ playerName })));
@@ -67,10 +69,13 @@ export class GameService {
     const players = this.players$
       .pipe(
         mergeAll(),
+        take(this.players$.getValue().length),
         map((pl: Player) => this.setPlayerStartingData(pl))
       );
 
-    this.unsubs.push(players.subscribe());
+    this.unsubs.push(players.subscribe(null, null, () => {
+      this.router.navigate([`${ROUTES.HOT_SEAT}/${ROUTES.GAME}`]);
+    }));
   }
 
   public destructor() {

@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { HotSeatStartComponent } from './mode/hot-seat-start/hot-seat-start.component';
 import {MatCardModule} from '@angular/material/card';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {MatCardModule} from '@angular/material/card';
     HotSeatComponent,
     NumberToArrayPipe,
     HotSeatStartComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
